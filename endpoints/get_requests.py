@@ -3,4 +3,4 @@ from endpoints.endpoints_handler import Requests
 
 class GetIdEndpoint(Requests):
     pass
-    # тут нет проверок именно для этого эндпоинта как появятся, обязательно добавлю
+    # There are no checks for this endpoint, I will add them when they appear.
