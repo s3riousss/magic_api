@@ -9,23 +9,18 @@ errors = []
 @allure.feature('Check request jsonplaceholder.typicode.com/posts')
 @allure.story('Check get_request_id')
 def test_get_request_id(check_response, start_end_print):
-    with allure.step('Post request for check id'):
-        id_request = check_response.create_new_post()
-    with allure.step('Get request for get id'):
-        check_response.get_request_id(id_request)
+    id_request = check_response.create_new_post()
+    check_response.get_request_id(id_request)
     try:
-        with allure.step('Check response status is 200'):
-            check_response.check_response_status_post_is_200()
+        check_response.check_response_status_post_is_200()
     except AssertionError as e:
         errors.append(str(e))
     try:
-        with allure.step('Check body in response'):
-            check_response.check_body_in_response()
+        check_response.check_body_in_response()
     except AssertionError as e:
         errors.append(str(e))
     try:
-        with allure.step('Check json schema response'):
-            check_response.check_jsonschema(post_create)
+        check_response.check_jsonschema(post_create)
     except ValidationError as e:
         errors.append(str(e))
 
