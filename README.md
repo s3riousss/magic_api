@@ -6,4 +6,4 @@ Steps to run the tests:
 3) For run test use:
 **pytest tests --alluredir=allure_results**
 4) For look results use:
-**allure serve allure_results --host localhost --port 9999**
+**allure serve allure_results**
